@@ -1,13 +1,13 @@
 ---
 name: humanizer
-version: 2.5.1
+version: 2.6.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  voice, negative parallelisms, debunking-pose headings, and filler phrases.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -460,6 +460,31 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 > ## Performance
 >
 > When users hit a slow page, they leave.
+
+
+### 30. Debunking-Pose Headings
+
+**Phrases to watch (in headings):** actually, really, the real X, that lands, that works, that matters, the truth about X, what X really means, the death of, the long game, demystified, explained, decoded, rethought, reimagined
+
+**Problem:** LLMs write headings that pose against an implied wrong version of the topic: "actually," "the real," "that lands," "the truth about." The pose announces *everyone else has it slightly wrong, but I'll give you the truth* — without delivering anything different than a plain heading would. This is pattern #27 (Persuasive Authority Tropes) operating at the heading level. It's also a sibling of pattern #1 (Significance Inflation): the heading promises a reveal it cannot keep.
+
+The pattern is hardest to see because headings read as structure rather than copy, and editors instinctively leave them alone. Audit headings explicitly as a separate pass.
+
+**Before:**
+> ## What the research actually says
+> ## Why your adult child cut you off (the real map)
+> ## The architecture of a letter that lands
+> ## Grandchildren: the long game
+> ## The truth about pricing models, explained
+
+**After:**
+> ## What the research says
+> ## Why your adult child cut you off
+> ## The architecture of an amends letter
+> ## Grandchildren
+> ## How pricing models work
+
+Keep the pose only when the chapter genuinely overturns a specific received view, and name that view in the opening paragraph. Otherwise cut the pose and let the content do the work.
 
 ---
 
