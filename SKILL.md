@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.7.0
+version: 2.8.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -338,7 +338,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ### 20. Collaborative Communication Artifacts
 
-**Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
+**Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give some examples?, Should I continue?, let me know, here is a...
 
 **Problem:** Text meant as chatbot correspondence gets pasted as content.
 
@@ -483,6 +483,19 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > This function uses a hash map for O(1) lookups, avoiding the O(n²) cost of naive iteration.
 
 
+### 31. Conversational Rhetorical Openers
+
+**Phrases to watch:** Honestly?, Look,, Here's the thing,, The thing is,, Let's be honest,, Real talk, — used as a standalone hook, often a single word as a question on its own line.
+
+**Problem:** LLMs open with a fake-candid hook ("Honestly?") to manufacture intimacy before delivering an ordinary point. The tell is the theatrical pause-and-reveal: a one-word question, a line break, then the "real" answer. A person being honest usually just says the thing.
+
+**Before:**
+> Is it worth the price? Honestly? It depends on how often you'll use it.
+
+**After:**
+> Whether it's worth the price depends on how often you'll use it.
+
+
 ## DETECTION GUIDANCE
 
 ### What NOT to flag (false positives)
@@ -496,6 +509,7 @@ A clean human writer can hit several of the patterns above without any AI involv
 - **Letter-style opening or closing on a comment.** Salutations and sign-offs predate ChatGPT by centuries.
 - **Common transition words in isolation.** *Additionally*, *moreover*, *consequently* are AI-coded only when piled up. One *however* is not a tell.
 - **Curly quotes alone.** macOS, Word, Google Docs, and most CMSes auto-curl by default. Curly quotes only count when stacked with other tells.
+- **"Honestly" or "look" mid-sentence.** These are ordinary in casual speech and writing. The tell is the *standalone theatrical opener* ("Honestly?" on its own line, then the reveal), not the word itself.
 - **Em dashes alone.** Many editors and journalists use them often. Em dashes are evidence only when paired with formulaic sales-y rhythm.
 - **Unsourced claims.** Most of the web is unsourced. Lack of citations doesn't prove anything.
 - **Correct, complex formatting.** Visual editors and templates produce clean output without any AI.
