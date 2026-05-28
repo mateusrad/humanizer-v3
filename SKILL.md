@@ -483,6 +483,19 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > This function uses a hash map for O(1) lookups, avoiding the O(n²) cost of naive iteration.
 
 
+### 31. Reference-Markup Artifacts
+
+**Signs to watch:** turn0search0, citeturn0search1, :contentReference[oaicite:0], oai_citation, [web:1], ?utm_source=chatgpt.com, &referrer=grok.com — citation or tracking tokens left in after pasting straight from a chat UI.
+
+**Problem:** These are a model's internal citation/tracking tokens, not prose. They never occur in human writing, so finding one is near-conclusive evidence of unedited AI output. Strip the token; if it stood in for a real source, replace it with a real citation or link.
+
+**Before:**
+> The reform passed in 2019 citeturn0search3 and reshaped the agency. See the announcement (https://example.org/reform?utm_source=chatgpt.com).
+
+**After:**
+> The reform passed in 2019 and reshaped the agency. See the announcement (https://example.org/reform).
+
+
 ## DETECTION GUIDANCE
 
 ### What NOT to flag (false positives)
