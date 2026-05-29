@@ -80,7 +80,7 @@ The skill will analyze your sentence rhythm, word choices, and quirks, then appl
 
 ## Overview
 
-Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) guide, maintained by WikiProject AI Cleanup. This comprehensive guide comes from observations of thousands of instances of AI-generated text.
+Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) guide, maintained by WikiProject AI Cleanup. The guide comes from observations of thousands of instances of AI-generated text.
 
 The skill also includes a final "obviously AI generated" audit pass and a second rewrite, to catch lingering AI-isms in the first draft.
 
@@ -88,7 +88,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 30 Patterns Detected (with Before/After Examples)
+## 31 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -105,7 +105,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 7 | **AI vocabulary** | "Actually... additionally... testament... landscape... showcasing" | "also... remain common" |
+| 7 | **AI vocabulary** | "Actually... additionally... testament... landscape... showcasing... `load[- ]bearing`" | "also... remain common... core... binding" |
 | 8 | **Copula avoidance** | "serves as... features... boasts" | "is... has" |
 | 9 | **Negative parallelisms / tailing negations** | "It's not just X, it's Y", "..., no guessing" | State the point directly |
 | 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |

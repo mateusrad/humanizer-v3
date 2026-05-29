@@ -1,13 +1,14 @@
 ---
 name: humanizer
-version: 2.7.0
+version: 2.7.1
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
-  attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  attributions, em dash overuse, rule of three, AI vocabulary words and
+  phrase patterns like `load[- ]bearing`, passive voice, negative
+  parallelisms, and filler phrases.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -167,11 +168,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## LANGUAGE AND GRAMMAR PATTERNS
 
-### 7. Overused "AI Vocabulary" Words
+### 7. Overused "AI Vocabulary" Words and Phrases
 
-**High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
+**High-frequency AI words and phrases:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), `load[- ]bearing`, pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 
-**Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
+**Problem:** These words and phrases appear far more frequently in post-2023 text. They often co-occur. When source text contains a phrase matching `load[- ]bearing`, replace it with the specific claim: core, binding, required, material, normative, decision-critical, or another concrete term.
 
 **Before:**
 > Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
