@@ -1,3 +1,4 @@
+[introducere si rezumat Mara Cosmuța.pdf](https://github.com/user-attachments/files/28389815/introducere.si.rezumat.Mara.Cosmu.a.pdf)
 ---
 name: humanizer
 version: 2.7.0
@@ -53,7 +54,8 @@ If the user provides a writing sample (their own previous writing), analyze it b
 
 ### How to provide a sample
 - Inline: "Humanize this text. Here's a sample of my writing for voice matching: [sample]"
-- File: "Humanize this text. Use my writing style from [file path] as a reference."
+- File: "Humanize this text. Use my writing style from [introducere si rezumat Mara Cosmuța.pdf](https://github.com/user-attachments/files/28389827/introducere.si.rezumat.Mara.Cosmu.a.pdf)
+ path] as a reference."
 
 
 ## PERSONALITY AND SOUL
