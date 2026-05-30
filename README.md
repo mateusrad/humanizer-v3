@@ -1,6 +1,6 @@
 # Humanizer
 
-A skill for Claude Code and OpenCode that removes signs of AI-generated writing from text, making it sound more natural and human.
+A portable agent skill for Claude Code, OpenCode, Hermes Agent, and OpenClaw that removes signs of AI-generated writing from text, making it sound more natural and human.
 
 ## Installation
 
@@ -38,6 +38,27 @@ cp SKILL.md ~/.config/opencode/skills/humanizer/
 
 > **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so if you use both tools, a single clone into `~/.claude/skills/humanizer/` is enough.
 
+### Hermes Agent
+
+Install from the raw `SKILL.md` URL:
+
+```bash
+hermes skills install https://raw.githubusercontent.com/blader/humanizer/main/SKILL.md
+```
+
+Or copy the skill into a local Hermes category directory:
+
+```bash
+mkdir -p ~/.hermes/skills/creative/humanizer
+cp SKILL.md ~/.hermes/skills/creative/humanizer/
+```
+
+Reload or restart your Hermes session after installing so the new skill is visible.
+
+### OpenClaw
+
+`SKILL.md` includes OpenClaw-friendly metadata in frontmatter. Install or import this repository through OpenClaw's skill flow, or copy `SKILL.md` into your OpenClaw skills directory if managing skills manually.
+
 ## Usage
 
 ### Claude Code
@@ -56,7 +77,19 @@ cp SKILL.md ~/.config/opencode/skills/humanizer/
 [paste your text here]
 ```
 
-Or ask the model to humanize text directly in either tool:
+### Hermes Agent
+
+```
+/humanizer
+
+[paste your text here]
+```
+
+### OpenClaw
+
+Invoke the installed `humanizer` skill from an OpenClaw session, then provide the text to rewrite.
+
+Or ask the model to humanize text directly in any supported tool:
 
 ```
 Please humanize this text: [your text]
@@ -180,6 +213,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
+- **2.7.1** - Added portable Hermes Agent and OpenClaw frontmatter metadata plus README install/usage notes. No change to the 30 patterns.
 - **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
 - **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.
 - **2.5.1** - Added a passive-voice / subjectless-fragment rule, raising the total to 29 patterns

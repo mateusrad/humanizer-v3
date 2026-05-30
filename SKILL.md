@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.7.0
+version: 2.7.1
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -9,7 +9,23 @@ description: |
   attributions, em dash overuse, rule of three, AI vocabulary words, passive
   voice, negative parallelisms, and filler phrases.
 license: MIT
-compatibility: claude-code opencode
+compatibility: claude-code opencode hermes openclaw
+platforms: [linux, macos, windows]
+tags:
+  - writing
+  - editing
+  - humanizer
+  - ai-writing
+  - voice
+  - style
+metadata:
+  hermes:
+    category: creative
+    tags: [writing, editing, humanizer, ai-writing, voice, style, copyediting]
+    homepage: https://github.com/blader/humanizer
+  openclaw:
+    emoji: "✍️"
+    homepage: https://github.com/blader/humanizer
 allowed-tools:
   - Read
   - Write
