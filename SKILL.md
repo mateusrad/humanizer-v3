@@ -1,13 +1,15 @@
 ---
 name: humanizer
-version: 2.5.1
+version: 2.6.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
-  comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
-  inflated symbolism, promotional language, superficial -ing analyses, vague
-  attributions, em dash overuse, rule of three, AI vocabulary words, passive
-  voice, negative parallelisms, and filler phrases.
+  comprehensive "Signs of AI writing" guide (WikiProject AI Cleanup). Detects
+  and fixes patterns including: inflated symbolism, promotional language,
+  superficial -ing analyses, vague attributions, em dash overuse, rule of three,
+  AI vocabulary words, passive voice, negative parallelisms, filler phrases,
+  insight-claim framing, and the secret-knowledge trope. Includes a regression-
+  to-the-mean mental model so reviewers can spot new patterns the AI invents.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -34,6 +36,35 @@ When given text to humanize:
 5. **Add soul** - Don't just remove bad patterns; inject actual personality
 6. **Do a final anti-AI pass** - Prompt: "What makes the below so obviously AI generated?" Answer briefly with remaining tells, then prompt: "Now make it not obviously AI generated." and revise
 
+---
+
+## Why these patterns exist (the underlying mechanic)
+
+LLMs predict the most statistically likely next token given everything that came before. That single fact explains almost every pattern in this guide.
+
+The most likely next phrase is almost always the generic, hedged, mildly positive one. Specific facts get smoothed into generic praise. A particular inventor of a particular train-coupling device becomes "a revolutionary titan of industry." A regional bus stop becomes "a vital hub of community life." A small-circulation journal article becomes "a widely cited study."
+
+This is regression to the mean for language. Each phrase pulls toward the average phrase used about that kind of thing. The result reads as confident, polished, and entirely generic — because it is.
+
+**Why this matters for the reviewer:** the patterns below are symptoms, not the disease. New AI models will invent new symptoms. When you spot a phrase that feels off but isn't on this list, ask: is this reaching for the most likely safe phrasing instead of the specific, true one? If yes, it's the same disease, treat it the same way.
+
+---
+
+## On detection (your eye is unreliable)
+
+Two findings worth keeping in mind:
+
+1. **Untrained humans are barely above chance at spotting AI text.** Studies cluster around 55-65% accuracy. Your gut is not enough.
+2. **Heavy LLM users reach roughly 90% accuracy.** Pattern recognition builds with exposure. The way to develop your eye is to use the tools and notice what makes the output feel off.
+
+Practical implications:
+
+- **Don't trust your gut.** Run the patterns like a checklist.
+- **AI detection tools have non-trivial error rates.** Don't rely on them as proof of anything.
+- **Human writing is converging with AI writing.** People who use LLMs absorb the cadences. A pattern in someone's writing is a signal, not proof of AI.
+- **The vocabulary list is a moving target.** "Delve" was the giveaway in 2023-2024. It dropped off sharply in 2025. New tells emerge with each model generation. Re-read the Wikipedia source quarterly and update.
+
+---
 
 ## Voice Calibration (Optional)
 
@@ -106,7 +137,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 2. Undue Emphasis on Notability and Media Coverage
 
-**Words to watch:** independent coverage, local/regional/national media outlets, written by a leading expert, active social media presence
+**Words to watch:** independent coverage, local/regional/national media outlets, written by a leading expert, active social media presence, maintains a strong digital presence, profiled in
 
 **Problem:** LLMs hit readers over the head with claims of notability, often listing sources without context.
 
@@ -145,9 +176,9 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 5. Vague Attributions and Weasel Words
 
-**Words to watch:** Industry reports, Observers have cited, Experts argue, Some critics argue, several sources/publications (when few cited)
+**Words to watch:** Industry reports, Observers have cited, Experts argue, Some critics argue, several sources/publications (when few cited), "such as" before what is actually an exhaustive list, "many scholars" when one is cited
 
-**Problem:** AI chatbots attribute opinions to vague authorities without specific sources.
+**Problem:** AI chatbots attribute opinions to vague authorities without specific sources, and inflate the number of sources behind a claim.
 
 **Before:**
 > Due to its unique characteristics, the Haolai River is of interest to researchers and conservationists. Experts believe it plays a crucial role in the regional ecosystem.
@@ -173,9 +204,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 7. Overused "AI Vocabulary" Words
 
-**High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
+**High-frequency AI words (current as of 2025):** additionally (especially sentence-initial), align with, bolstered, boasts (meaning "has"), crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), meticulous/meticulously, pivotal, robust, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 
-**Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
+**Problem:** These words appear far more frequently in post-2022 text. They often co-occur — find one, look for others.
+
+**Important caveat:** the vocabulary is a moving target. "Delve" was the canonical 2023-2024 tell and dropped off sharply in 2025. Newer models have learned to avoid the obvious ones. Treat this list as a snapshot, not a permanent set. Re-read primary sources every few months.
 
 **Before:**
 > Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
@@ -321,10 +354,10 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 19. Curly Quotation Marks
 
-**Problem:** ChatGPT uses curly quotes (“...”) instead of straight quotes ("...").
+**Problem:** ChatGPT uses curly quotes ("...") instead of straight quotes ("...").
 
 **Before:**
-> He said “the project is on track” but others disagreed.
+> He said "the project is on track" but others disagreed.
 
 **After:**
 > He said "the project is on track" but others disagreed.
@@ -461,6 +494,64 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 >
 > When users hit a slow page, they leave.
 
+
+### 30. The Insight Claim (Secret-Knowledge Framing)
+
+**Phrases to watch:** almost nobody says it, what they don't tell you, the truth nobody wants to admit, here's the part you're not supposed to know, the thing nobody talks about, that's the whole shift / that's the real point
+
+**Problem:** Sister of pattern #27. The sentence claims insight by claiming the rest of the world lacks it. It is the default cadence of social media writing because algorithms reward it, which is exactly why AI tools reach for it. It signals "important content" without doing the work of being important.
+
+**The diagnostic:** any sentence whose job is to tell the reader the next sentence matters. If you can cut the line and the writing still works, it was bait.
+
+**Before:**
+> You need to learn to delegate to a machine. That's the whole shift, and almost nobody says it plainly.
+
+**After:**
+> You need to learn to delegate to a machine.
+
+Or, if a transition is needed, something earned:
+
+> You need to learn to delegate to a machine. Took me a while to see it that way.
+
+
+### 31. Manufactured Discourse ("Generated Debate" / "Prompted Reflection")
+
+**Phrases to watch:** has generated debate about, has prompted broader reflection on, has raised philosophical questions about, has shaped emerging discussions on, has sparked conversations around
+
+**Problem:** AI claims the subject produced a cultural conversation without naming anyone who participated in it. The discussion is named, never staged. Often paired with rule-of-three abstract nouns: "questions of authenticity, consent, and dignity."
+
+**Before:**
+> GriefBots have prompted broader reflection on mortality and memory in a digital age, raising philosophical questions about identity, authenticity, and what it means to "live on" through algorithms.
+
+**After:**
+> Researchers at Cambridge wrote in a 2024 paper that GriefBots force a specific question: if a chatbot mimics a dead relative's texting style, does the family own the model? They argue no. The companies that train the bots argue yes. Nobody has settled it.
+
+
+### 32. Hedging Preamble Before Importance Claim
+
+**Phrases to watch:** Though it saw only limited application, it..., While small in scope, the project nonetheless..., Despite its modest size, the organization plays a vital role in..., Although little-known today, it...
+
+**Problem:** The sentence concedes a subject is unimportant in the first clause, then claims importance anyway in the second. It is a tell because it solves a problem only an LLM has: the prompt asked for a significant-sounding write-up of something that isn't significant.
+
+**Before:**
+> Though it saw only limited application, it contributes to the broader history of early aviation engineering and reflects the influence of French rotary designs on German manufacturers.
+
+**After:**
+> Two prototypes were built. Both crashed during testing. The engine was abandoned in 1913.
+
+
+### 33. Title-as-Standalone-Entity Openers
+
+**Signs to watch:** Opening lines that define the title as if it were a real-world thing: "X refers to...", "X is the comprehensive guide to...", "The 'New Framework' is a chronological list of..."
+
+**Problem:** Common in AI-generated drafts because the model is treating the prompt's title as a definition target. Human writers usually start by saying something about the topic, not by defining the title.
+
+**Before:**
+> The "List of songs about Mexico" is a curated compilation of musical works that reference Mexico, its culture, geography, or identity as a central theme.
+
+**After:**
+> More than 400 songs in major recorded catalogues mention Mexico by name. The list below covers those that treat the country as a central subject rather than a passing reference.
+
 ---
 
 ## Process
@@ -506,7 +597,7 @@ Provide:
 >
 > While specific details are limited based on available information, it could potentially be argued that these tools might have some positive effect. Despite challenges typical of emerging technologies—including hallucinations, bias, and accountability—the ecosystem continues to thrive. In order to fully realize this potential, teams must align with best practices.
 >
-> In conclusion, the future looks bright. Exciting times lie ahead as we continue this journey toward excellence. Let me know if you’d like me to expand on any section!
+> In conclusion, the future looks bright. Exciting times lie ahead as we continue this journey toward excellence. Let me know if you'd like me to expand on any section!
 
 **Draft rewrite:**
 > AI coding assistants speed up some tasks. In a 2024 study by Google, developers using Codex completed simple functions 55% faster than a control group, but showed no improvement on debugging or architectural decisions.
@@ -554,6 +645,12 @@ Provide:
 
 ## Reference
 
-This skill is based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. The patterns documented there come from observations of thousands of instances of AI-generated text on Wikipedia.
+Based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. The patterns there are observed across thousands of instances of AI-generated text on Wikipedia.
 
-Key insight from Wikipedia: "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
+Core insight: LLMs predict the most statistically likely next token, which means generic, hedged, mildly positive phrasing wins by default. Every pattern in this guide is a symptom of that one mechanic.
+
+## Changelog
+
+**2.6.0** — Added "Why these patterns exist" (regression-to-the-mean mental model). Added "On detection" (human accuracy is around chance, heavy LLM users reach ~90%, vocabulary is a moving target). Added vocab words: bolstered, meticulous/meticulously, robust, additionally (sentence-initial). Added patterns 30-33: insight claim / secret-knowledge framing, manufactured discourse ("generated debate"), hedging preamble before importance claim, title-as-standalone-entity openers. Sharpened pattern 2 with "maintains a digital presence" and pattern 5 with source-quantity inflation.
+
+**2.5.1** — Prior release.
