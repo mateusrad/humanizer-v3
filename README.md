@@ -1,42 +1,26 @@
 # Humanizer
 
-A skill for Claude Code and OpenCode that removes signs of AI-generated writing from text, making it sound more natural and human.
+A skill for coding agents (Claude Code, OpenCode, etc) that removes signs of AI-generated writing from text, making it sound more natural and human.
 
 ## Installation
 
-### Claude Code
-
-Clone directly into Claude Code's skills directory:
-
 ```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
+npx skills add blader/humanizer
 ```
+> This will let you install for any coding agent.
 
-Or copy the skill file manually if you already have this repo cloned:
+### Per-agent install
 
-```bash
-mkdir -p ~/.claude/skills/humanizer
-cp SKILL.md ~/.claude/skills/humanizer/
-```
+If you want to install for specific agent, use the table below.
 
-### OpenCode
-
-Clone directly into OpenCode's skills directory:
-
-```bash
-mkdir -p ~/.config/opencode/skills
-git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
-```
-
-Or copy the skill file manually if you already have this repo cloned:
-
-```bash
-mkdir -p ~/.config/opencode/skills/humanizer
-cp SKILL.md ~/.config/opencode/skills/humanizer/
-```
-
-> **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so if you use both tools, a single clone into `~/.claude/skills/humanizer/` is enough.
+| Agent | Install command |
+|---|---|
+| **Claude Code** | `npx skills add blader/humanizer --agent claude-code` |
+| **opencode** | `npx skills add blader/humanizer --agent opencode` |
+| **Codex CLI** | `npx skills add blader/humanizer --agent codex` |
+| **Cursor** | `npx skills add blader/humanizer --agent cursor` |
+ 
+> **Note:** OpenCode also scans `~/.claude/skills/` for compatibility, so if you use both tools, setting it up for Claude Code is enough.
 
 ## Usage
 
