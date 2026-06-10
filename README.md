@@ -111,7 +111,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 | 10 | **Rule of three** | "innovation, inspiration, and insights" | Use natural number of items |
 | 11 | **Synonym cycling** | "protagonist... main character... central figure... hero" | "protagonist" (repeat when clearest) |
 | 12 | **False ranges** | "from the Big Bang to dark matter" | List topics directly |
-| 13 | **Passive voice / subjectless fragments** | "No configuration file needed" | Name the actor when it helps clarity |
+| 13 | **Passive voice / subjectless fragments** | "No configuration file needed", "Want to see if X?" | Name the actor; keep subjects in casual register too |
 
 ### Style Patterns
 
@@ -183,6 +183,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
+- **2.8.1** - Extended §13 to cover subjectless fragments produced as a humanizing overcorrection ("Want to see if X?", "Hit reply to opt out") in addition to the existing technical/UI-voice case ("No configuration file needed"); added a distinguished-from-§31 note. 33 patterns total.
 - **2.8.0** - Added style/cadence patterns #31-33 for manufactured punchlines, aphorism formulas, and conversational rhetorical openers; expanded #20 to catch offer-to-continue chatbot closers. 33 patterns total.
 - **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
 - **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.

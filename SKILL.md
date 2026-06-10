@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.8.0
+version: 2.8.1
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -245,13 +245,26 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### 13. Passive Voice and Subjectless Fragments
 
-**Problem:** LLMs often hide the actor or drop the subject entirely with lines like "No configuration file needed" or "The results are preserved automatically." Rewrite these when active voice makes the sentence clearer and more direct.
+**Problem:** LLMs hide the actor or drop the subject in two distinct registers:
 
-**Before:**
+1. *Technical / UI voice:* lines like "No configuration file needed" or "The results are preserved automatically." The actor is hidden behind passive voice or elided entirely.
+2. *Humanizing overcorrection:* when asked to make text sound casual or natural, the editor often reaches for subjectless fragments ("Want to see if X?", "Hit reply to opt out", "Ninety days since X.") on the theory that brevity reads as natural speech. The opposite is true. Real casual speech keeps subjects and verbs; it uses contractions, shorter clauses, and informal vocabulary, not missing grammar. Telegraphic copy reads as rushed, not human.
+
+Rewrite both by naming the actor and using complete clauses.
+
+**Before (technical / UI):**
 > No configuration file needed. The results are preserved automatically.
 
 **After:**
 > You do not need a configuration file. The system preserves the results automatically.
+
+**Before (humanizing overcorrection):**
+> Want to see if your views have shifted? Hit reply to opt out.
+
+**After:**
+> Would you like to see whether your views have shifted? You can reply to this email if you would like to opt out.
+
+**Distinguished from §31:** §31 catches *runs* of fragments stacked to manufacture drama ("It had no preference. No prior. No nostalgia."). This pattern catches *isolated* fragments produced as a shortcut to "sounding casual," where the failure is not over-dramatic but underspecified.
 
 
 ## STYLE PATTERNS
