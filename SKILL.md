@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.8.0
+version: 2.8.1
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -538,6 +538,8 @@ A clean human writer can hit several of the patterns above without any AI involv
 - **"Honestly" or "look" mid-sentence.** These are ordinary in casual writing. The tell is the standalone theatrical opener, not the word itself.
 - **Unsourced claims.** Most of the web is unsourced. Lack of citations doesn't prove anything.
 - **Correct, complex formatting.** Visual editors and templates produce clean output without any AI.
+
+- **Secondhand text.** Never rewrite a watched phrase the author did not author. Leave it inside quotation marks or attributed reported speech (she called the rollout "painfully slow"), in a proper noun, title, brand, or product name (the film *Blazing Saddles*, a product called "Dead Simple"), in a use-mention where the phrase is discussed rather than used ("avoid 'blazingly fast', it's a cliche"), or in a historical source. The author's own use of the same phrase is judged normally. This applies to every pattern, not only the intensifier rules.
 
 When in doubt, look for **clusters** of tells, not isolated ones. A single em dash means nothing; em dashes plus rule-of-three plus *vibrant tapestry* plus a "Conclusion" section is a confession.
 
