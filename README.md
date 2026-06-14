@@ -88,7 +88,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 33 Patterns Detected (with Before/After Examples)
+## 34 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -131,6 +131,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 | 31 | **Manufactured punchlines / staccato drama** | "It had no preference. No prior. No nostalgia." | Use varied sentence lengths and concrete claims |
 | 32 | **Aphorism formulas** | "Symmetry is the language of trust" | Replace the formula with the actual claim |
 | 33 | **Conversational rhetorical openers** | "Honestly? It depends..." | Remove the fake-candid setup |
+| 34 | **Casual intensifiers / dismissive amplifiers** | "blazingly fast", "just a glorified wrapper" | Flag in neutral register, keep idioms and terms of art |
 
 ### Communication Patterns
 
@@ -183,6 +184,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
+- **2.9.0** - Added pattern #34 (casual intensifiers and dismissive amplifiers): flags hype like "blazingly fast" and belittling templates like "a glorified X" when they outrun a neutral register, with carve-outs for idioms, terms of art, manner adverbs, and substantiated claims. 34 patterns total.
 - **2.8.0** - Added style/cadence patterns #31-33 for manufactured punchlines, aphorism formulas, and conversational rhetorical openers; expanded #20 to catch offer-to-continue chatbot closers. 33 patterns total.
 - **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
 - **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.

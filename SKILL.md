@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.8.0
+version: 2.9.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
@@ -518,6 +518,22 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 **After:**
 > Whether it's worth the price depends on how often you'll use it.
+
+
+### 34. Casual Intensifiers and Dismissive Amplifiers
+
+**Words to watch:** dead simple, blazingly fast, dirt cheap, wildly, insanely, ridiculously, stupidly, painfully slow, hopelessly outdated, woefully thin, jaw-droppingly, eye-wateringly, X as hell, X af. Dismissive templates: just a dumb X, a glorified X, a mere X, nothing but a X.
+
+**Problem:** LLMs reach for blog-register punch and drop casual intensifiers and belittling amplifiers into prose meant to be neutral. The lift outruns the register, and the dismissive asserts a verdict the text has not earned.
+
+The bar scales with register. In neutral, reference, or formal prose, one intensifier already breaks it. Casual and creative-work writing tolerate a couple and flag only on density. A dismissive gets no register discount: one unsupported "a glorified X" keys anywhere, unless the same passage names the concrete shortfall that earns it.
+
+Flag only the degree modifier sitting right before an adjective ("insanely fast", "dead simple"). Leave the manner adverb ("prices swung wildly"), the term of art ("dead letter queue"), the fossilized idiom ("painfully shy", "dead wrong"), and any amplifier a figure substantiates on the same dimension ("insanely hot, 260C").
+
+**Before:** The library is blazingly fast and the API is dead simple, basically just a glorified wrapper.
+**After:** The library is fast, and the API exposes three methods over a thin wrapper around fetch.
+
+Openers belong to section 33, cadence to section 31, lyrical praise to section 4.
 
 
 ## DETECTION GUIDANCE
