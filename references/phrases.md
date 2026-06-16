@@ -1,6 +1,6 @@
 # Phrases to remove or replace
 
-Word- and phrase-level AI tells. Any one of these can appear in clean human writing; the signal is a cluster. Before cutting, apply the core override: if removing a phrase would distort a claim or drop a citation, keep it.
+Word- and phrase-level clutter to cut. These crowd out the claim, inflate plain words, or stall a sentence before it starts; they also mark AI writing. Any one can appear in clean human prose, so the signal is a cluster. Before cutting, apply the core override: if removing a phrase would distort a claim or drop a citation, keep it.
 
 This catalog covers word choice. Sentence- and paragraph-level patterns are in [structures.md](structures.md). Artifact conventions are in [technical.md](technical.md).
 

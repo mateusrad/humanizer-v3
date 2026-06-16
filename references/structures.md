@@ -1,8 +1,8 @@
 # Structures to avoid
 
-Sentence-, paragraph-, and document-level AI tells. As with the phrase catalog, one instance can be fine; the signal is repetition or clustering. Apply the core override: never mangle a sentence or drop a claim just to break a pattern.
+Sentence-, paragraph-, and document-level patterns that bury the point: manufactured drama, false structure, and shapes that hide who did what. They also mark AI writing. As with the phrase catalog, one instance can be fine; the signal is repetition or clustering. Apply the core override: never mangle a sentence or drop a claim just to break a pattern.
 
-Word- and phrase-level tells are in [phrases.md](phrases.md). Artifact conventions are in [technical.md](technical.md).
+Word- and phrase-level clutter is in [phrases.md](phrases.md). Artifact conventions are in [technical.md](technical.md).
 
 ## Negative parallelism (binary contrast)
 
