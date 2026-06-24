@@ -10,13 +10,15 @@ A **Claude Code / OpenCode skill** implemented entirely as Markdown. The runtime
 
 - `SKILL.md` — the skill itself. YAML frontmatter (`name`, `version`, `description`, `allowed-tools`) followed by the canonical, numbered pattern list with before/after examples. **This is the source of truth.**
 - `README.md` — for humans: installation, usage, a summary table of the patterns, and a version history.
+- `.claude-plugin/plugin.json` — plugin manifest (name, version, metadata). Lets the repo install as a Claude Code plugin.
+- `.claude-plugin/marketplace.json` — single-repo marketplace entry so `/plugin marketplace add blader/humanizer` works.
 
 ## The maintenance contract
 
 `SKILL.md` and `README.md` must stay in sync. When you change behavior or content:
 
 - **Patterns:** the skill currently defines **33 numbered patterns**. If you add, remove, or renumber any, update the README pattern table, its "N Patterns Detected" heading, and every cross-reference in the same change. Keep numbering stable unless you are deliberately renumbering.
-- **Version:** `SKILL.md` frontmatter has a `version:` field and `README.md` has a "Version History" section. Bump both together.
+- **Version:** `SKILL.md` frontmatter has a `version:` field, `README.md` has a "Version History" section, and `.claude-plugin/plugin.json` has a `version` field. Bump all three together so the plugin version matches the skill. (`marketplace.json` intentionally omits a version so `plugin.json` stays the single source of truth.)
 - **Non-obvious fixes:** if you change the prompt to handle a tricky failure mode (a repeated mis-edit, an unexpected tone shift), add a short note to the README version history explaining what was fixed and why.
 
 ## Editing SKILL.md

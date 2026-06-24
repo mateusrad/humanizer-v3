@@ -4,7 +4,18 @@ A skill for Claude Code and OpenCode that removes signs of AI-generated writing 
 
 ## Installation
 
-### Claude Code
+### Plugin (recommended)
+
+Install as a Claude Code plugin so it stays updated with `/plugin update`:
+
+```
+/plugin marketplace add blader/humanizer
+/plugin install humanizer@humanizer
+```
+
+The skill is then invoked as `/humanizer:humanizer` (Claude Code namespaces plugin skills under the plugin name).
+
+### Claude Code (manual)
 
 Clone directly into Claude Code's skills directory:
 
@@ -183,6 +194,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 ## Version History
 
+- **2.9.0** - Packaged as an installable Claude Code plugin and single-repo marketplace (`.claude-plugin/plugin.json` + `marketplace.json`). No change to the 33 patterns.
 - **2.8.0** - Added style/cadence patterns #31-33 for manufactured punchlines, aphorism formulas, and conversational rhetorical openers; expanded #20 to catch offer-to-continue chatbot closers. 33 patterns total.
 - **2.7.0** - Added pattern #30 (diff-anchored writing); made em/en dashes a hard cut rather than "overuse"; expanded #21 to cover speculative gap-filling ("maintains a low profile"). 30 patterns total.
 - **2.6.0** - Cleanup pass: consolidated the duplicated workflow sections, gated the personality guidance to content where voice is wanted, removed the model-fingerprinting subsection, and condensed the worked example. No change to the 29 patterns.
