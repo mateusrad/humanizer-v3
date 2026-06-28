@@ -171,7 +171,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 **High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 
-**Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
+**Problem:** These words appear far more frequently in post-2023 text, and they often co-occur. Kobak and colleagues (Science Advances, 2025) tracked vocabulary across 15 million PubMed abstracts and measured an abrupt post-2023 surge in exactly this register, including "delves," "underscores," "showcasing," "potential," and "crucial," with the 2024 excess skewed toward style verbs over content words. One such word proves nothing; a cluster of them is the tell.
 
 **Before:**
 > Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
@@ -256,9 +256,21 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## STYLE PATTERNS
 
-### 14. Em Dashes (and En Dashes): Cut Them
+### 14. Dashes as Punctuation: Cut Them
 
-**Rule:** The final rewrite contains no em dashes (—) or en dashes (–). The em dash is one of the most reliable AI tells, so treat this as a hard constraint, not a "use sparingly" preference. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure the sentence. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
+**Rule:** The final rewrite contains no dash used as a punctuation mark. That means no em dash (—), no en dash (–), and no spaced hyphen standing in for one (` - ` or ` -- `). Swapping an em dash for a spaced hyphen does not fix the tell, it just moves it: the dash *look* is the problem, not the specific glyph. The fix is to rephrase so the dash is not needed at all.
+
+A dash is almost always a stand-in for a cleaner mark, so replace each one by restructuring, in rough order of preference:
+- A period when two complete thoughts are joined: split them into two sentences.
+- A semicolon for two loosely connected independent clauses.
+- A comma for a short interrupting aside.
+- Parentheses for a longer aside.
+- A colon when the dash introduces an explanation or a list.
+- When a dash resists every replacement, the phrase it sets off is usually weak. Cut it.
+
+This is an editing pass, not a drafting rule: write freely, then hunt the dashes down on revision.
+
+Word hyphens are not dashes and stay. Keep hyphens inside compounds (`well-known`, `cross-functional`) and inside names, URLs, and identifiers (`Jean-Paul`, `user-id`).
 
 **Before:**
 > The term is primarily promoted by Dutch institutions—not by the people themselves. You don't say "Netherlands, Europe" as an address—yet this mislabeling continues—even in official documents.
@@ -266,13 +278,15 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **After:**
 > The term is primarily promoted by Dutch institutions, not by the people themselves. You don't say "Netherlands, Europe" as an address, yet this mislabeling continues in official documents.
 
-**Before:**
-> The new policy — announced without warning — affects thousands of workers. The changes -- long overdue according to critics -- will take effect immediately.
+**Before (spaced hyphen, still a tell):**
+> Thanks for the intro - I'll move you to bcc. No rush on any of it - I just want a clear picture.
 
 **After:**
-> The new policy, announced without warning, affects thousands of workers. The changes, long overdue according to critics, will take effect immediately.
+> Thanks for the intro. I'll move you to bcc. No rush on any of it. I just want a clear picture.
 
-Before returning the final rewrite, scan it for `—` and `–`. Any hit means the draft isn't done.
+This follows the writing authorities that treat the dash as replaceable on sight: Josh Bernoff ("the em dash is a bit of a jerk, replace it whenever possible"), Grammarly's punctuation guidance, and Wordvice's comparison of when to use commas, colons, semicolons, and dashes.
+
+Before returning the final rewrite, scan it for `—`, `–`, and any space-hyphen-space (` - `) used as a connector. Any hit means the draft isn't done.
 
 
 ### 15. Overuse of Boldface
@@ -338,9 +352,9 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 ### 20. Collaborative Communication Artifacts
 
-**Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give examples?, Should I continue?, let me know, here is a...
+**Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give examples?, Should I continue?, let me know, here is a..., As an AI language model..., as a large language model, I'm sorry, but I cannot
 
-**Problem:** Text meant as chatbot correspondence gets pasted as content.
+**Problem:** Text meant as chatbot correspondence gets pasted as content, including outright self-identification. Wikipedia's "Signs of AI writing" catalogs these under "Communication intended for the user," alongside canned assurances of good faith and policy compliance.
 
 **Before:**
 > Here is an overview of the French Revolution. I hope this helps! Let me know if you'd like me to expand on any section.
@@ -418,7 +432,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 
 **Words to watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
 
-**Problem:** AI hyphenates these uniformly, including in predicate position (`the report is high-quality`). Humans hyphenate inconsistently — typically only when the compound is attributive (`a high-quality report`) and often dropping the hyphen otherwise (`the report is high quality`). Keep attributive-position hyphens; drop them when the compound follows the noun.
+**Problem:** AI hyphenates these uniformly, including in predicate position (`the report is high-quality`). Humans hyphenate inconsistently, typically only when the compound is attributive (`a high-quality report`), and often drop the hyphen otherwise (`the report is high quality`). Keep attributive-position hyphens; drop them when the compound follows the noun.
 
 **Before:**
 > The cross-functional team delivered a high-quality, data-driven report. The team is cross-functional, the report is high-quality, and the methodology is data-driven.
@@ -520,6 +534,21 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 > Whether it's worth the price depends on how often you'll use it.
 
 
+## FACTUAL RELIABILITY
+
+### 34. Fabricated and unverifiable citations
+
+**Problem:** LLMs invent references that look real but point to nothing: a plausible author, title, year, journal, DOI, or court case that does not exist, or a genuine source that does not actually support the claim pinned to it. Walters and Wilder (2023, Scientific Reports) found that 55% of the bibliographic citations generated by GPT-3.5 and 18% of those from GPT-4 were fabricated, meaning they matched no real published work, and many of the rest carried substantive errors. The stakes are not hypothetical: in Mata v. Avianca (S.D.N.Y. 2023) a federal judge fined lawyers who filed a brief built on fake cases that ChatGPT had invented, including fabricated quotations attributed to real judges. So treat every specific reference as unverified until you check it. Confirm the source exists and says what the text claims, then keep it; replace anything you cannot verify with a real source, or cut the claim.
+
+**Words to watch:** a named study, paper, statute, or case you cannot locate; a DOI or ISBN that resolves to nothing or to an unrelated work; "according to a study" with no findable study; precise, confident statistics with no traceable origin.
+
+**Before:**
+> A 2021 study in the Journal of Coastal Ecology found that mangrove restoration increased local fish populations by 47% (Hartman & Doyle, 2021).
+
+**After:**
+> Mangrove restoration can raise local fish counts, though published estimates vary widely by site and method. (Name a source only after confirming it exists and reports this.)
+
+
 ## DETECTION GUIDANCE
 
 ### What NOT to flag (false positives)
@@ -527,7 +556,7 @@ Before returning the final rewrite, scan it for `—` and `–`. Any hit means t
 A clean human writer can hit several of the patterns above without any AI involvement. Before rewriting, sanity-check that you are not gutting legitimate prose. The following are *not* reliable indicators on their own:
 
 - **Perfect grammar and consistent style.** Many writers are professionals or have been edited. Polish does not equal AI.
-- **Mixed casual and formal registers.** This often signals a person in a technical field, a young writer, or someone with neurodivergent prose habits — not a chatbot.
+- **Mixed casual and formal registers.** This often signals a person in a technical field, a young writer, or someone with neurodivergent prose habits, not a chatbot.
 - **"Bland" or "robotic" prose.** AI prose has *specific* tells. Generic dryness without those tells is just dry writing.
 - **Formal or academic vocabulary.** AI overuses *specific* fancy words (see §7), not all fancy words. Don't flatten "ostensibly" or "constituent" just because they sound brainy.
 - **Letter-style opening or closing on a comment.** Salutations and sign-offs predate ChatGPT by centuries.
@@ -544,7 +573,7 @@ When in doubt, look for **clusters** of tells, not isolated ones. A single em da
 
 ### Signs of human writing (preserve these)
 
-When you see these, lean toward leaving the prose alone — they are evidence of a real person writing, and over-editing will destroy what makes the piece sound human:
+When you see these, lean toward leaving the prose alone. They are evidence of a real person writing, and over-editing will destroy what makes the piece sound human:
 
 - **Specific, unusual, hard-to-fabricate detail.** A real address. A weird quote. The phrase "the lawyer who used to work upstairs from my dentist." LLMs round off specifics; humans hoard them.
 - **Mixed feelings and unresolved tension.** "I think this is mostly good, but it bothers me, and I can't fully explain why." LLMs default to clean takes.
@@ -562,7 +591,7 @@ When you see these, lean toward leaving the prose alone — they are evidence of
 1. Read the input carefully and identify every instance of the patterns above.
 2. Write a **draft rewrite**. Check that it reads naturally aloud, varies sentence length, prefers specific details and simple constructions (is/are/has), and keeps the appropriate register.
 3. Ask: **"What makes the below so obviously AI generated?"** Answer briefly with any remaining tells.
-4. Revise into a **final rewrite** that addresses them and contains no em or en dashes (see §14).
+4. Revise into a **final rewrite** that addresses them and contains no dashes used as punctuation (see §14).
 
 Deliver the draft, the brief "still-AI" bullets, the final rewrite, and (optionally) a short summary of changes.
 

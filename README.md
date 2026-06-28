@@ -88,7 +88,7 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 33 Patterns Detected (with Before/After Examples)
+## 34 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -147,6 +147,12 @@ The skill also includes a final "obviously AI generated" audit pass and a second
 | 23 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
 | 24 | **Excessive hedging** | "could potentially possibly" | "may" |
 | 25 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
+
+### Factual Reliability
+
+| # | Pattern | Before | After |
+|---|---------|--------|-------|
+| 34 | **Fabricated citations** | "(Hartman & Doyle, 2021)" for a paper that does not exist | Verify the source exists and supports the claim, or cut it |
 
 ## Full Example
 
