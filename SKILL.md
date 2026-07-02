@@ -399,6 +399,9 @@ Before: *🚀 Launch Phase: Q3. 💡 Key Insight: users prefer simplicity.*
 After: *The product launches in Q3. User research showed a preference for
 simplicity.*
 
+This rule is enforced by the mandatory Final Check that runs after editing in
+every mode. See Final Check, below Process and Output.
+
 ---
 
 #### 19. Curly quotation marks
@@ -646,22 +649,25 @@ Do not flag alone:
 ## Final Check (every mode, no exceptions)
 
 This gate runs after editing is done and before anything is delivered,
-regardless of which mode was used. It is not optional and it is not covered
-by the general em-dash guidance in §14: treat it as a separate, mandatory
-step of its own.
+regardless of which mode was used. It is not optional, and it is not
+satisfied just by having followed the prose guidance inside §14 or §18: treat
+it as a separate, mandatory step that runs no matter how carefully you think
+you already applied those patterns.
 
 1. Take the exact text you are about to output, the text the person will
    read, not the draft, not your reasoning.
-2. Scan it character by character for `—` (em dash) and `–` (en dash),
-   including spaced variants (` — `) and double hyphens used as a dash
-   (` -- `).
-3. If you find one, replace it with a period, comma, colon, parentheses, or
-   a restructured sentence, then go back to step 2 and scan again from the
-   start.
-4. Only deliver output once a full scan finds zero matches.
+2. Scan it character by character for two things:
+   - `—` (em dash) and `–` (en dash), including spaced variants (` — `) and
+     double hyphens used as a dash (` -- `)
+   - decorative emoji anywhere in the text, including standalone labels and
+     inline notes, not only in headings or bullet points, unless the
+     author's own writing sample demonstrably uses them throughout (§18)
+3. If you find either, fix it (remove the dash per §14, remove the emoji per
+   §18), then go back to step 2 and scan again from the start.
+4. Only deliver output once a full scan finds zero matches for both.
 
-A single missed em dash fails this check. "Mostly removed" is not a passing
-result.
+A single missed em dash or leftover emoji fails this check. "Mostly removed"
+is not a passing result.
 
 ---
 
