@@ -200,11 +200,23 @@ market and 18th-century church.*
 **Words to watch:** industry reports, observers have cited, experts argue, some
 critics argue, several sources
 
-**Fix:** Name the specific source and date, or remove the claim.
+**Fix:** Name the specific source and date, or remove the claim entirely.
+Cutting the vague-attribution phrase while leaving the claim standing on its
+own is not a fix. A claim with no named source is still a vague attribution
+even after the words "experts believe" are gone; softening the framing does
+not resolve it, only naming a source or deleting the claim does.
 
 Before: *Experts believe it plays a crucial role in the regional ecosystem.*
 After: *The Haolai River supports several endemic fish species, according to a
 2019 survey by the Chinese Academy of Sciences.*
+
+Before (still unresolved after a partial edit): *This movement tends to be
+especially relevant for mid-sized cities.*
+Why this fails: the attribution phrase is gone, but the claim is still
+unsourced and still presented as fact. Nothing was actually fixed.
+After: *A 2023 survey by the National Confederation of Municipalities found
+mid-sized cities adopted these tools at twice the rate of larger cities.* (Or,
+if no source exists: cut the sentence.)
 
 ---
 

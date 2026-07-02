@@ -441,6 +441,16 @@ passages that do not need it.
 
 ## Version History
 
+- **3.0.1** — Fixed two real-world failure modes found in production testing.
+  Em dashes were surviving into delivered output in Moderate and Full mode
+  because the only enforcement was a one-line reminder inside pattern #14.
+  Replaced it with a mandatory Final Check step, run after editing in every
+  mode including Light mode (which previously had no dash check at all), that
+  scans the exact output for em and en dashes and loops until none remain.
+  Also clarified pattern #5 (vague attributions): removing the attribution
+  phrase while leaving the underlying claim unsourced is not a fix, only
+  naming a source or cutting the claim resolves it. No patterns added,
+  removed, or renumbered.
 - **3.0.0** — Architectural refactor. Added the Principle of Minimal
   Intervention, text type classification (5 types), artificialness assessment
   (Low / Medium / High), three intervention modes (Light / Moderate / Full),
