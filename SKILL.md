@@ -284,10 +284,24 @@ guess.*
 
 #### 10. Rule of three
 
-**Fix:** Use the natural number of items. If two things, say two.
+**Fix:** Use the natural number of items. If the three items are
+near-synonymous padding stacked to sound comprehensive, cut down to what is
+actually distinct. If the items are real and distinct, keep every one of
+them: removing the "three things" announcement is not permission to drop a
+substantive item. Losing a real point is content loss, not a fix, and it
+breaks the rule that a rewrite must cover everything the original covers.
 
 Before: *Attendees can expect innovation, inspiration, and industry insights.*
 After: *The event includes talks and time for informal networking.*
+
+Before (three real, distinct items, not padding): *The system offers three
+main benefits: lower costs, faster deployment, and higher customer
+satisfaction.*
+Wrong fix (drops a real item while removing the framing): *The system lowers
+costs and speeds up deployment.*
+Right fix (drops only the "three things" announcement, keeps every point):
+*The system lowers costs, speeds up deployment, and, according to internal
+surveys, improves customer satisfaction.*
 
 ---
 
