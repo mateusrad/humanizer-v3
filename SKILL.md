@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 3.0.1
+version: 3.0.2
 description: |
   Remove signs of AI-generated writing from text, making it sound more natural
   and human-written. Applies the Principle of Minimal Intervention: edit only

@@ -209,3 +209,40 @@ For new patterns, also verify:
   cross-references.
 - Merge a change that introduces an em dash or en dash into `SKILL.md` itself.
   The skill forbids them in output; the source file should not model them either.
+
+---
+
+## Known open questions (documented decisions)
+
+These are not bugs. They surfaced during real-world testing (v3.0.2) and are
+recorded here so a future contributor does not "fix" a deliberate or
+undecided behavior by accident.
+
+### Pattern #26 in non-English text
+
+The canonical example for hyphenated word pair overuse ("cross-functional" →
+"cross functional") assumes English text. In other languages, the same
+compound terms (cross-functional, data-driven, real-time, end-to-end,
+client-facing) are often used as English loanwords. Dropping only the hyphen
+in a non-English sentence tends to read as a typo rather than a correction
+("é cross functional" in Portuguese looks broken, not fixed). In testing,
+the skill instead translated the term into the target language's own
+predicate form (for example, "é multidisciplinar," "responde em tempo
+real"). This looks like a reasonable editorial adaptation, not a failure to
+apply the pattern, but it has only been observed in Portuguese and has not
+been tested across other languages. Treat this as an open question, not a
+confirmed rule, until it has been tested more broadly.
+
+### Editing punctuation inside a directly attributed quotation
+
+The Final Check and patterns #14 and #19 currently apply to the entire
+delivered text, with no stated exception for quoted, attributed speech. In
+testing, the skill rewrote an em dash and adjusted quote style inside a
+direct quotation attributed to a named speaker. Detection Guidance already
+exempts quoted or titled text from AI-pattern flagging under "Secondhand
+text," but it does not address whether the Final Check's hard-constraint
+patterns (em/en dashes, curly quotes) should carry the same exemption for
+attributed quotes. No decision has been made. Until one is, the skill will
+continue correcting this punctuation inside attributed quotes, which may not
+be the desired behavior for journalistic, transcript, or legal use cases
+where a quotation's exact characters carry evidentiary weight.

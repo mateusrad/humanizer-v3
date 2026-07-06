@@ -441,6 +441,19 @@ passages that do not need it.
 
 ## Version History
 
+- **3.0.2** — Three more fixes found in production testing. Pattern #10
+  (rule of three): dismantling the "three things" announcement was
+  sometimes dropping a real, distinct item instead of just removing the
+  framing; the rule now states explicitly that losing a substantive point is
+  content loss, not a fix, with an example of the failure. Pattern #13
+  (passive voice): sentences that name the actor inside a passive "by X"
+  phrase (for example, "the configuration is applied by the system") were
+  being left as-is, since the actor was technically named; the rule now
+  requires the actor to become the grammatical subject of an active verb,
+  not just be present somewhere in the sentence. Final Check: extended to
+  also scan for decorative emoji anywhere in the text, not only headings and
+  bullets, after one survived in a standalone label outside those two
+  contexts. No patterns added, removed, or renumbered.
 - **3.0.1** — Fixed two real-world failure modes found in production testing.
   Em dashes were surviving into delivered output in Moderate and Full mode
   because the only enforcement was a one-line reminder inside pattern #14.
