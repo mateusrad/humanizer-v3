@@ -329,11 +329,19 @@ dark matter.*
 
 #### 13. Passive voice and subjectless fragments
 
-**Fix:** Name the actor when active voice is clearer.
+**Fix:** Rewrite in active voice, with the actor as the sentence's subject and
+the verb in active form. Naming the actor inside a passive "by X" phrase is
+not enough on its own: "The configuration is applied automatically by the
+system" still reads as passive even though the actor is present. The actor
+has to become the grammatical subject.
 
 Before: *No configuration file needed. The results are preserved automatically.*
 After: *You do not need a configuration file. The system preserves results
 automatically.*
+
+Before (actor named, but still passive): *The configuration is applied
+automatically by the system.*
+After: *The system applies the configuration automatically.*
 
 ---
 
